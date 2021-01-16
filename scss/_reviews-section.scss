@@ -1,0 +1,188 @@
+.reviews-section{
+    width: 100%;
+    height: 100%;
+    #reviews{
+        width: 100%;
+        height: 10px;
+        background-color: transparent;
+    }
+    .top-section-design{
+        width: 100%;
+
+        .black-line{
+            width: 600px;
+            height: 3px;
+            margin: 100px auto 60px auto;
+            background-color: black;
+
+            .circle{
+                width: 40px;
+                height: 40px;
+                border-radius: 50%;
+                background-color: gold;
+                border: 2px solid black;
+                margin: auto;
+                position: relative;
+                left: -15px;
+                bottom: 10px;
+            }
+
+            .circle::before{
+                content: "";
+                position: absolute;
+                left: 20px;
+                top: -20px;
+                width: 38px;
+                height: 38px;
+                border-radius: 50%;
+                background-color: gold;
+                border: 2px solid black;
+                margin: auto;
+            }
+        }
+    }
+
+    .section-title-reviews{
+        font-weight: 300;
+        font-size: 4rem;
+        text-align: center;
+        margin-bottom: 60px;
+    }
+
+    .reviews-grid-container{
+        width: 100%;
+        height: 100%;
+        display: grid;
+        grid-template-columns: 1fr 1fr 1fr 1fr;
+        gap: 20px;
+        justify-content: space-between;
+
+        .review-text{
+            height: 220px;
+            display: flex;
+            flex-direction: column;
+            box-shadow: 1px 1px 3px black;
+            padding: 10px;
+
+            .review-text-title{
+                display: flex;
+                align-self: center;
+
+                .country-flag{
+                    align-self: center;
+                    background-size: cover;
+                    background-position: center;
+                    width: 40px;
+                    height: 25px;
+                }
+
+                .usa{
+                    background-image: url(../images/flags/usa.png);
+                }
+                .uk{
+                    background-image: url(../images/flags/uk.png);
+                }
+                .canada{
+                    background-image: url(../images/flags/canada.png);
+                }
+                .india{
+                    background-image: url(../images/flags/india.png);
+                }
+                .uae{
+                    background-image: url(../images/flags/uae.png);
+                }
+                .nigeria{
+                    background-image: url(../images/flags/nigeria.png);
+                }
+                .neds{
+                    background-image: url(../images/flags/neds.png);
+                }
+
+                p{
+                    font-weight: bold;
+                    margin-left: 10px;
+                    font-size: 0.8rem;
+                }
+            }
+
+            .review-text-text{
+                p{
+                    font-size: 1rem;
+
+                    span{
+                        color: darken($color: gold, $amount: 10%);
+                        font-size: 1rem;
+                    }
+
+                    .read-more a{
+                        font-size: 0.7rem;
+                        padding: 2.5px;
+                        background-color: black;
+                        color: white;
+                        font-weight: bold;
+                    }
+                }
+            }
+        }
+    }
+}
+
+@media screen and(max-width:768px){
+    .reviews-section{
+        .top-section-design{
+            .black-line{
+                width: 400px;
+            }
+        }
+    
+        .section-title-reviews{
+            font-size: 3rem;
+        }
+    
+        .reviews-grid-container{
+            grid-template-columns: 1fr 1fr;
+            gap: 30px;
+    
+            .review-text{
+                height: 200px;
+                padding: 15px;
+    
+                .review-text-title{
+                    p{
+                        font-size: 0.8rem;
+                    }
+                }
+    
+                .review-text-text{
+                    p{
+                        font-size: 0.9rem;
+                    }
+                }
+            }
+        }
+    }
+}
+
+@media screen and(max-width:416px){
+    .reviews-section{
+        .top-section-design{
+            .black-line{
+                width: 250px;
+            }
+        }
+    
+        .section-title-reviews{
+            font-size: 2.7rem;
+        }
+
+        .reviews-grid-container{
+            grid-template-columns: 1fr;
+            gap: 30px;
+    
+            .review-text{
+                width: 90%;
+                margin: auto;
+            }
+        }
+    }
+}

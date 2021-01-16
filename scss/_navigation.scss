@@ -1,0 +1,285 @@
+.nav-header{
+    border-bottom: 2px solid gold;
+    width: 100%;
+    height: 80px;
+    background-color: black;
+    opacity: 0.95;
+    position: fixed;
+    top: 0;
+    z-index: 2;
+
+    .top-nav{
+        width: 100%;
+        height: 100%;
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+        flex-direction: row;
+    }
+
+    .nav-logo{
+        h1{
+            font-size: 2rem;
+            color: white;
+            letter-spacing: 0.1rem;
+        }
+    }
+
+    .lg-screen-nav{
+        ul{
+            list-style: none;
+            display: flex;
+            
+            li{
+                margin-left: 20px;
+
+                a{
+                    font-size: 1rem;
+                    color: white;
+                    padding-bottom: 5px;
+                }
+
+                a:hover{
+                    border-bottom: 2px solid gold;
+                }
+            }
+        }
+    }
+
+    .mobile-screen-nav{
+        display: none;
+    }
+}
+
+@media screen and (max-width: 768px){
+    .nav-header{
+        height: 65px;
+
+        .nav-logo{
+            h1{
+                font-size: 1.5rem;
+            }
+        }
+    
+        .lg-screen-nav{
+            display: none;
+        }
+
+        .mobile-screen-nav{
+            display: unset;
+
+            nav.mobile {
+                position: fixed;
+                z-index: 1;
+            }
+            
+            nav.mobile .menu-wrap{
+                position: fixed;
+                top: 0;
+                right: 2.6rem;
+                
+                .toggler{
+                    position: absolute;
+                    cursor: pointer;
+                    width: 60px;
+                    height: 60px;
+                    opacity: 0;
+                    top: 0;
+                    right: 0;
+                    z-index: 2;
+                }
+            
+                .hamburger{
+                    position: absolute;
+                    background-color: transparent;
+                    display: flex;
+                    align-items: center;
+                    justify-content: center;
+                    top: 2px;
+                    right: 1px;
+                    z-index: 1;
+                    width: 65px;
+                    height: 60px;
+                    padding: 1rem;
+            
+                    div{
+                        position: relative;
+                        width: 100%;
+                        height: 2px;
+                        background-color: white;
+                        display: flex;
+                        align-items: center;
+                        justify-content: center;
+                    }
+            
+                    div::before, div::after{
+                        content: "";
+                        position: absolute;
+                        top: -12px;
+                        left: 0px;
+                        width: 100%;
+                        height: 2px;
+                        background-color: white;
+                    }
+            
+                    div::after{
+                        top: 12px;
+                    }
+                }
+            
+                
+                //toggler animation upon checked state
+                .toggler:checked + .hamburger>div{
+                    transform: rotate(135deg);
+                    background-color: gold;
+                }
+            
+                //Turn lines into X
+                .toggler:checked + .hamburger>div::before,
+                .toggler:checked + .hamburger>div::after{
+                    top: 0;
+                    transform: rotate(90deg);
+                    background-color: gold;
+                }
+            
+                .menu{
+                    position: fixed;
+                    top: -700px;
+                    left: 0;
+                    width: 100%;
+                    height: 100%;
+                    visibility: hidden;
+                    overflow: hidden;
+                    display: flex;
+                    align-items: center;
+                    justify-content: center;
+            
+                    & > div{
+                        background: rgba(0, 0, 0, 1);
+                        position: absolute;
+                        right: 0;
+                        top: 0;
+                        width: 50%;
+                        height: 100%;
+                        display: flex;
+                        flex: none;
+                        justify-content: center;
+            
+                        & > div{
+                            text-align: left;
+                            max-width: 100%;
+                            max-height: 100%;
+                            display: flex;
+                            flex-direction: column;
+                            align-items: left;
+                            font-size: 1rem;
+                            opacity: 0;
+                            color: white;
+
+                            p{
+                                position: absolute;
+                                bottom: 30px;
+                                text-align: left;
+                            }
+            
+                            ul{
+                                list-style: none;
+                                margin-top: 60px;                                
+            
+                                li{
+                                    padding: 25px 0;
+                                }
+            
+                                a{
+                                    color: white;
+                                    text-decoration: none;
+                                    padding-bottom: 5px;
+                                }
+            
+                                a:hover{
+                                    border-bottom: 2px solid gold;
+                                    transition: color 0.25s ease;
+                                }
+                            }
+                        }
+                    }
+                }
+            }
+            
+            .menu-wrap .toggler:checked ~ .menu{
+                visibility: visible;
+                top: 0;
+                transition: all 0.25s ease-in;
+            }
+
+            .menu-wrap .toggler:checked ~ .menu > div > div{
+                opacity: 1;
+                transition: all 2s ease-in;
+            }
+        }
+    }
+}
+
+@media screen and (max-width: 416px){
+    .nav-header{
+        height: 50px;
+
+        .nav-logo{
+            h1{
+                font-size: 1.2rem;
+            }
+        }
+    
+        .mobile-screen-nav{
+            nav.mobile .menu-wrap{
+                top: 0;
+                right: 1rem;
+                
+                .toggler{
+                    width: 40px;
+                    height: 40px;
+                    right: 0.25rem;
+                }
+            
+                .hamburger{
+                    top: 11px;
+                    right: 0.7rem;
+                    width: 25px;
+                    height: 25px;
+                    padding: 0rem;
+            
+                    div{
+                        width: 100%;
+                        height: 2px;
+                    }
+            
+                    div::before, div::after{
+                        content: "";
+                        top: -8px;
+                    }
+            
+                    div::after{
+                        top: 8px;
+                    }
+                }
+            
+                .menu{            
+                    & > div{
+                        width: 60%;
+            
+                        & > div{            
+                            ul{
+                                list-style: none;
+                                margin-top: 40px;                                
+            
+                                li{
+                                    padding: 10px 0;
+                                }
+                            }
+                        }
+                    }
+                }
+            }
+        }
+    }
+}

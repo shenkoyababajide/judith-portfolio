@@ -1,0 +1,114 @@
+.footer-section{
+    margin-top: 50px;
+    width: 100%;
+    background-color: lighten($color: black, $amount: 15%);
+    display: flex;
+    flex-direction: column;
+    padding-top: 40px;
+
+    .row{
+        margin: auto;
+        display: flex;
+        align-items: center;
+
+        .footer-texts{
+            margin-right: 50px;
+            p.name{
+                font-size: 2rem;
+                font-weight: 500;
+                color: white;
+
+                span{
+                    color: gold;
+                }
+            }
+
+            p.slogan{
+                color: white;
+                text-align: center;
+            }
+        }
+
+        .icons{
+            a{
+                font-size: 1.5rem;
+                color: white;
+                background-color: black;
+                padding: 10px 15px;
+                margin-right: 10px;
+                box-shadow: 1px 1px 4px gold;
+            }
+        }
+    }
+
+    .copyright{
+        color: white;
+        font-size: 1rem;
+        text-align: center;
+        margin-top: 35px;
+        margin-bottom: 20px;
+        color: white;
+
+        span{
+            color: gold;
+        }
+    }
+}
+
+@media screen and(max-width:768px){
+    .footer-section{    
+        .row{    
+            .footer-texts{
+                margin-right: 30px;
+                p.name{
+                    font-size: 1.7rem;
+                }
+    
+                p.slogan{
+                    font-size: 1rem;
+                }
+            }
+    
+            .icons{
+                a{
+                    font-size: 1.3rem;
+                    padding: 8px 13px;
+                }
+            }
+        }
+    
+        .copyright{
+            font-size: 0.9rem;
+        }
+    }
+}
+
+@media screen and(max-width:416px){
+    .footer-section{    
+        .row{
+            flex-direction: column; 
+            .footer-texts{
+                margin-right: 0px;
+                margin-bottom: 30px;
+                p.name{
+                    font-size: 1.6rem;
+                }
+    
+                p.slogan{
+                    font-size: 0.9rem;
+                }
+            }
+    
+            .icons{
+                a{
+                    font-size: 1.2rem;
+                    padding: 8px 13px;
+                }
+            }
+        }
+    
+        .copyright{
+            font-size: 0.8rem;
+        }
+    }
+}

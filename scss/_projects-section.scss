@@ -1,0 +1,248 @@
+.projects-section{
+    width: 100%;
+    height: 100%;
+    #projects{
+        width: 100%;
+        height: 10px;
+        background-color: transparent;
+    }
+    .top-section-design{
+        width: 100%;
+
+        .black-line{
+            width: 600px;
+            height: 3px;
+            margin: 100px auto 60px auto;
+            background-color: black;
+
+            .circle{
+                width: 40px;
+                height: 40px;
+                border-radius: 50%;
+                background-color: gold;
+                border: 2px solid black;
+                margin: auto;
+                position: relative;
+                left: -15px;
+                bottom: 10px;
+            }
+
+            .circle::before{
+                content: "";
+                position: absolute;
+                left: 20px;
+                top: -20px;
+                width: 38px;
+                height: 38px;
+                border-radius: 50%;
+                background-color: gold;
+                border: 2px solid black;
+                margin: auto;
+            }
+        }
+    }
+
+    .section-title-projects{
+        font-weight: 300;
+        font-size: 4rem;
+        text-align: center;
+        margin-bottom: 60px;
+    }
+
+    .projects-container{
+        width: 100%;
+        height: 100%;
+        background-color: black;
+    
+        .projects-grid-container{
+            display: flex;
+            flex-direction: row;
+            justify-content: space-between;
+            align-items: center;
+            padding: 20px 0px;
+    
+            .projects-important-note{
+                flex-basis: 55%;
+                display: flex;
+                justify-content: flex-start;
+                align-items: center;
+    
+                div{
+                    flex-basis: 30%;
+                    display: flex;
+                    flex-direction: column;
+                    justify-content: center;
+                    align-items: center;
+    
+                    i{
+                        color: white;
+                        margin-bottom: 10px;
+                        font-size: 2.5rem;
+                    }
+    
+                    h1{
+                        color: white;
+                    }
+                }
+    
+                p{
+                    flex-basis: 65%;
+                    color: white;
+                    font-size: 1rem;
+
+                    span{
+                        font-weight: bold;
+                        color: gold;
+                    }
+                }
+            }
+    
+            .form-fill{
+                flex-basis: 40%;
+                box-shadow: 2px 2px 5px gold;
+                border-radius: 10px;
+
+                .form-wrapper{
+                    margin: auto;
+                    padding: 25px 0px;
+                    width: 60%;
+
+                    label{
+                        color: white;
+                        font-size: 1rem;
+                    }
+
+                    select{
+                        padding: 7px 5px;
+                        font-size: 0.9rem;
+                        width: 100%;
+                        border: none;
+                        color: grey;
+                        background-color: lighten($color: black, $amount: 20%);
+                        margin-bottom: 5px;
+                        appearance: none;
+
+                        option{
+                            border: none;
+                            margin-left: 7px;
+                        }
+                    }
+
+                    input{
+                        margin-bottom: 5px;
+                        color: white;
+                        border: none;
+                        font-size: 0.9rem;
+                        width: 100%;
+                        padding: 7px 10px;
+                        background-color: lighten($color: black, $amount: 20%);
+                    }
+
+                    button{
+                        border: none;
+                        width: 100%;
+                        padding: 10px 10px;
+                        background-color: darken($color: gold, $amount: 10%);
+                        color: black;
+                    }
+
+                    textarea{
+                        background-color: lighten($color: black, $amount: 20%);
+                        font-size: 0.9rem;
+                        font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, 'Open Sans', 'Helvetica Neue', sans-serif;
+                        color: grey;
+                        padding: 7px 10px;
+                        width: 100%;
+                        margin-bottom: 20px;
+                        border: none;
+                        resize: none;
+                    }
+                }
+            }
+        }
+    }
+}
+
+@media screen and(max-width:768px){
+    .projects-section{
+        .top-section-design{
+            .black-line{
+                width: 400px;
+            }
+        }
+    
+        .section-title-projects{
+            font-size: 3rem;
+        }
+    
+        .projects-container{
+            .projects-grid-container{
+                flex-direction: column;
+                padding: 30px 0px;
+
+                .projects-important-note{
+                    display: flex;
+                    flex-direction: column;
+                    width: 70%;
+                    margin-bottom: 30px;
+        
+                    div{
+                        margin-bottom: 10px;
+                        i{
+                            color: gold;
+                        }
+        
+                        h1{
+                            color: gold;
+                        }
+                    }
+
+                    p{
+                        span{
+                            color: white;
+                        }
+                    }
+                }
+        
+                .form-fill{
+                    width: 70%;
+    
+                    .form-wrapper{
+                        padding: 20px 0px;
+                        width: 70%;
+                    }
+                }
+            }
+        }
+    }
+}
+
+@media screen and(max-width:416px){
+    .projects-section{
+        .top-section-design{
+            .black-line{
+                width: 250px;
+            }
+        }
+    
+        .section-title-projects{
+            font-size: 2.7rem;
+        }
+    
+        .projects-container{
+            .projects-grid-container{
+                .projects-important-note{
+                    width: 90%;
+                }
+        
+                .form-fill{
+                    width: 90%;
+    
+                    .form-wrapper{
+                        width: 90%;
+                    }
+                }
+            }
+        }
+    }
+}
